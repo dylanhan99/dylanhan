@@ -27,15 +27,8 @@ import { CustomIcon, customIcons } from '../custom-icons'
   styleUrl: './navbar.component.css',
   providers: [HttpClient]  
 })
-export class NavbarComponent implements OnInit {
-  sections = [
-    {
-      name: 'Custom SVG',
-      class: '',
-      items: ['home'],
-    },
-  ];
 
+export class NavbarComponent implements OnInit {
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
