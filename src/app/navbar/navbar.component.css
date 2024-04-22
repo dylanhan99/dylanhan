@@ -1,6 +1,13 @@
+.navbar-logo-button {
+    display: flex;
+    align-items: center;
+}
+
 .navbar-logo {
     padding: 0px 14px;
-    transform: scale(2);
+    display: flex;
+    align-items: center;
+    transform: scale(2.5);
 }
   
 .navbar-spacer-1 {
@@ -9,5 +16,5 @@
 }
 
 .navbar-spacer-2 {
-    flex-grow: 2;
+    flex-grow: 1;
 }
