@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { MatToolbarModule } from '@angular/material/toolbar'
@@ -17,7 +16,6 @@ import { CustomIcon, customIcons } from '../custom-icons'
   imports: [
     RouterLink,
     CommonModule,
-    HttpClientModule,
 
     MatToolbarModule,
     MatIconModule,
@@ -25,7 +23,6 @@ import { CustomIcon, customIcons } from '../custom-icons'
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  providers: [HttpClient]  
 })
 
 export class NavbarComponent implements OnInit {
