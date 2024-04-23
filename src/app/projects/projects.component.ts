@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 
-import { ProjectBioComponent } from './project-bio/project-bio.component';
-import { ProjectService } from './project.service';
+import { ProjectService } from './project-misc/project.service';
+import { ProjectBioComponent } from './project-misc/project-bio.component';
 
 @Component({
   selector: 'app-projects',
