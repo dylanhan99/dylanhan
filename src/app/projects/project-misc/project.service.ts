@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import jprojects from '../../../assets/projects/projects.json'
+import jprojectsfav from '../../../assets/projects/projects-favorites.json'
 import { Project } from './project';
 
 @Injectable({
@@ -7,6 +8,7 @@ import { Project } from './project';
 })
 export class ProjectService {
   private static projects: {fileName: string, projectName: string, summary: string}[];
+  private static projectFavs: string[];
   
   constructor() {}
   
@@ -14,11 +16,19 @@ export class ProjectService {
     if (!ProjectService.projects){
       ProjectService.projects = jprojects;
     }
-    
-    var ret: Project[] = [];
+
+    var ret: Map<string, Project> = new Map<string, Project>();
     ProjectService.projects.forEach(function(value) {
-      ret.push(new Project(value.fileName, value.projectName, value.summary));
+      ret.set(value.fileName, new Project(value.fileName, value.projectName, value.summary));
     });
     return ret;
+  }
+
+  public static getProjectFavorites() {
+    if (!ProjectService.projectFavs){
+      ProjectService.projectFavs = jprojectsfav;
+    }
+    
+    return ProjectService.projectFavs;
   }
 }

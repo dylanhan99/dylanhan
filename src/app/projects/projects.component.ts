@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, CommonModule } from '@angular/common';
 
 import { Project } from './project-misc/project';
 import { ProjectService } from './project-misc/project.service';
@@ -9,7 +9,7 @@ import { ProjectBioComponent } from './project-misc/project-bio.component';
   selector: 'app-projects',
   standalone: true,
   imports: [
-    NgFor,
+    NgFor, CommonModule,
     ProjectBioComponent,
   ],
   templateUrl: './projects.component.html',
@@ -19,11 +19,13 @@ import { ProjectBioComponent } from './project-misc/project-bio.component';
   ]
 })
 export class ProjectsComponent implements OnInit {
-  projects!: Project[];
+  projects!: Map<string, Project>;
+  projectFavorites!: string[];
   
   constructor() {}
   
   ngOnInit() {
     this.projects = ProjectService.getProjects();
+    this.projectFavorites = ProjectService.getProjectFavorites();
   }
 }

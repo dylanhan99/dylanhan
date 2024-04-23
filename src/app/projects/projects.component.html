@@ -1,5 +1,11 @@
 <p>projects works!</p>
 
-<div *ngFor="let proj of projects">
-    <app-project-bio [src]=proj></app-project-bio>
+<h2>Highlights *insert slideshow here*</h2>
+<div *ngFor="let fav of projectFavorites">
+    <span>{{fav}}</span>
+</div>
+
+<h2>Catalogue</h2>
+<div *ngFor="let kv of projects | keyvalue">
+    <app-project-bio [src]=kv.value></app-project-bio>
 </div>
