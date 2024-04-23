@@ -1,9 +1,11 @@
 export class Project {
     public constructor(
-        private name: string = "NO-NAME",
-        private markdown: string = "NO-MARKDOWN",
+        private fileName    : string = "NO-FILE-NAME",
+        private projectName : string = "NO-PROJ-NAME",
+        private summary     : string = "NO-SUMMARY",
     ) {}
 
-    public getName() { return this.name; }
-    public getMarkdown() { return this.markdown; }
+    public getFileName()    { return this.fileName; }
+    public getProjectName() { return this.projectName; }
+    public getSummary()     { return this.summary; }
 }

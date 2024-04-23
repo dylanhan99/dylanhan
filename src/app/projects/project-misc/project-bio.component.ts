@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProjectCacheService } from './project-cache.service';
+import { Project } from './project';
 
 @Component({
   selector: 'app-project-bio',
@@ -7,14 +7,13 @@ import { ProjectCacheService } from './project-cache.service';
   imports: [],
   templateUrl: './project-bio.component.html',
   styleUrl: './project-bio.component.css',
-  providers: [ProjectCacheService]
+  providers: []
 })
 export class ProjectBioComponent implements OnInit {
-  @Input({ required: true })  projectName!: string;
+  @Input({ required: true }) src!: Project;
 
-  constructor(private projectCache: ProjectCacheService){}
+  constructor() {}
+  ngOnInit() {}
 
-  ngOnInit() { this.projectCache.fetchProject(this.projectName); }
-
-  get project() { return this.projectCache.project; }
+  get project() { return this.src; }
 }
