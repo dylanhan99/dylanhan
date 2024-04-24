@@ -1,2 +1,13 @@
-<h4>{{project?.getProjectName()}}</h4>
-<a>{{project?.getSummary()}}</a>
+<mat-card class="card">
+    <mat-card-actions>
+        <button mat-button>
+            <mat-card-header class="card-header">
+                <mat-card-title>{{project?.getProjectName()}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src={{getImagePath()}} alt={{project?.getFileName()}}>
+            <mat-card-content>
+                <a>{{project?.getSummary()}}</a>
+            </mat-card-content>
+        </button>    
+    </mat-card-actions>
+</mat-card>
