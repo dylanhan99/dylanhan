@@ -6,6 +6,10 @@
 </div>
 
 <h2>Catalogue</h2>
-<div *ngFor="let name of projects">
-    <app-project-bio [projectName]=name></app-project-bio>
-</div>
+<mat-grid-list cols="5" rowHeight="2:3">
+    <div *ngFor="let name of projects">
+        <mat-grid-tile>
+            <app-project-bio [projectName]=name></app-project-bio>
+        </mat-grid-tile>
+    </div>
+</mat-grid-list>

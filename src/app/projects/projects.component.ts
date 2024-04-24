@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgFor, CommonModule } from '@angular/common';
 
-import { Project } from './project-misc/project';
+//import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list'
+
 import { ProjectService } from './project-misc/project.service';
 import { ProjectBioComponent } from './project-misc/project-bio.component';
 
@@ -10,6 +12,7 @@ import { ProjectBioComponent } from './project-misc/project-bio.component';
   standalone: true,
   imports: [
     NgFor, CommonModule,
+    MatGridListModule,
     ProjectBioComponent,
   ],
   templateUrl: './projects.component.html',
