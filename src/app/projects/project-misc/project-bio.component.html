@@ -4,8 +4,10 @@
             <mat-card-header class="card-header">
                 <mat-card-title>{{project?.getProjectName()}}</mat-card-title>
             </mat-card-header>
-            <img mat-card-image src={{getImagePath()}} alt={{project?.getFileName()}}>
-            <mat-card-content>
+            <div class="card-image-container">
+                <img mat-card-image src={{getImagePath()}} alt={{project?.getFileName()}} class="card-image">
+            </div>
+            <mat-card-content class="card-content">
                 <a>{{project?.getSummary()}}</a>
             </mat-card-content>
         </button>    

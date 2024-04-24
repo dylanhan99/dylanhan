@@ -21,7 +21,7 @@ import { ProjectBioComponent } from './project-misc/project-bio.component';
     ProjectService,
   ]
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit {  
   constructor() {}
   ngOnInit() {}
 

@@ -1,15 +1,17 @@
-<p>projects works!</p>
+<div class="default-page">
+    <p>projects works!</p>
 
-<h2>Highlights *insert slideshow here*</h2>
-<div *ngFor="let fav of projectFavorites">
-    <span>{{fav}}</span>
-</div>
-
-<h2>Catalogue</h2>
-<mat-grid-list cols="5" rowHeight="2:3">
-    <div *ngFor="let name of projects">
-        <mat-grid-tile>
-            <app-project-bio [projectName]=name></app-project-bio>
-        </mat-grid-tile>
+    <h2>Highlights *insert slideshow here*</h2>
+    <div *ngFor="let fav of projectFavorites">
+        <span>{{fav}}</span>
     </div>
-</mat-grid-list>
+
+    <h2>Catalogue</h2>
+    <mat-grid-list cols="5" rowHeight="20em" gutterSize="1em" class="grid-list">
+        <div *ngFor="let name of projects">
+            <mat-grid-tile [rowspan]="1" class="card">
+                <app-project-bio [projectName]=name></app-project-bio>
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+</div>

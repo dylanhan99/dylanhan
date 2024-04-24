@@ -1,0 +1,16 @@
+.card {
+    width: 100%;
+    height: auto;
+}
+
+.card-image-container {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    height: 10em;
+}
+
+.card-image {
+    padding: 5px;
+    width: auto;
+    height: 100%;
+}

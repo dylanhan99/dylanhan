@@ -2,8 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card'
 
 import { ProjectService } from './project.service';
-import { log } from 'console';
-
 
 @Component({
   selector: 'app-project-bio',
