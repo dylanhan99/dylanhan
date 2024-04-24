@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Project } from './project';
+import { ProjectService } from './project.service';
 
 @Component({
   selector: 'app-project-bio',
@@ -10,10 +11,10 @@ import { Project } from './project';
   providers: []
 })
 export class ProjectBioComponent implements OnInit {
-  @Input({ required: true }) src!: Project;
+  @Input({ required: true }) projectName!: string;
 
   constructor() {}
   ngOnInit() {}
 
-  get project() { return this.src; }
+  get project() { return ProjectService.fetchProject(this.projectName); }
 }

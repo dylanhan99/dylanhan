@@ -1,27 +1,31 @@
 import { Injectable } from '@angular/core';
+import { Project } from './project';
 import jprojects from '../../../assets/projects/projects.json'
 import jprojectsfav from '../../../assets/projects/projects-favorites.json'
-import { Project } from './project';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
-  private static projects: {fileName: string, projectName: string, summary: string}[];
+  //private static projects: {fileName: string, projectName: string, summary: string}[];
+  private static projects: Map<string, Project>;
   private static projectFavs: string[];
   
   constructor() {}
   
-  public static getProjects() {
-    if (!ProjectService.projects){
-      ProjectService.projects = jprojects;
-    }
+  public static getProjects(): string[] {
+    if (ProjectService.projects)
+      return Array.from(ProjectService.projects.keys());
 
-    var ret: Map<string, Project> = new Map<string, Project>();
-    ProjectService.projects.forEach(function(value) {
-      ret.set(value.fileName, new Project(value.fileName, value.projectName, value.summary));
+    ProjectService.projects = new Map<string, Project>;
+    var tempProjs: {fileName: string, projectName: string, summary: string}[] = jprojects;
+    tempProjs.forEach(function(value) {
+      ProjectService.projects.set(
+        value.fileName, 
+        new Project(value.fileName, value.projectName, value.summary));
     });
-    return ret;
+
+    return ProjectService.getProjects();
   }
 
   public static getProjectFavorites() {
@@ -30,5 +34,11 @@ export class ProjectService {
     }
     
     return ProjectService.projectFavs;
+  }
+
+  public static fetchProject(name: string) {
+    if (!ProjectService.projects || !this.projects.has(name))
+      return null;
+    return this.projects.get(name);
   }
 }

@@ -19,13 +19,9 @@ import { ProjectBioComponent } from './project-misc/project-bio.component';
   ]
 })
 export class ProjectsComponent implements OnInit {
-  projects!: Map<string, Project>;
-  projectFavorites!: string[];
-  
   constructor() {}
-  
-  ngOnInit() {
-    this.projects = ProjectService.getProjects();
-    this.projectFavorites = ProjectService.getProjectFavorites();
-  }
+  ngOnInit() {}
+
+  get projects() { return ProjectService.getProjects(); }
+  get projectFavorites() { return ProjectService.getProjectFavorites(); }
 }
