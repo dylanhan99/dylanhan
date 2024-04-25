@@ -15,16 +15,12 @@ export class ResizeHandlerService {
   constructor(
     private m_Observer: BreakpointObserver
   ) { 
-    console.log("ay");
     this.m_Observer.observe(Array.from(this.m_ImTheMap.keys()))
-        .subscribe(result => {
-          console.log(result.breakpoints);
-          console.log(result.matches);
-            //if (result.matches) {
-            //  console.log("screen matches HandsetLandscape");
-            //}
+      .subscribe(result => {
+        for (let key of this.m_ImTheMap.keys()) {
+          this.m_ImTheMap.set(key, result.breakpoints[key]);
         }
-      );
+      });
   }
   
   public get(){console.log("aaaaa");}
