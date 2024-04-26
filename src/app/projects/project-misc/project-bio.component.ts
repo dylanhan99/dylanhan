@@ -23,7 +23,6 @@ import { ResizeHandlerService } from '../../global-services/resize-handler.servi
 export class ProjectBioComponent implements OnInit {
   @Input({ required: true }) projectName!: string;
   private imgPath!: string;
-  public projectId!: string;
 
   constructor(
     public resize: ResizeHandlerService,
