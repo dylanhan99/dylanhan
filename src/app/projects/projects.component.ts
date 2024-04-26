@@ -6,7 +6,7 @@ import { MatGridListModule } from '@angular/material/grid-list'
 
 import { ProjectService } from './project-misc/project.service';
 import { ResizeHandlerService } from '../global-services/resize-handler.service';
-import { ProjectBioComponent } from './project-misc/project-bio.component';
+import { ProjectBioComponent } from './project-misc/project-bio/project-bio.component';
 
 @Component({
   selector: 'app-projects',

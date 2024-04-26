@@ -5,8 +5,8 @@ import { NgIf } from '@angular/common';
 
 import { MatCardModule } from '@angular/material/card'
 
-import { ProjectService } from './project.service';
-import { ResizeHandlerService } from '../../global-services/resize-handler.service';
+import { ProjectService } from '../project.service';
+import { ResizeHandlerService } from '../../../global-services/resize-handler.service';
 
 @Component({
   selector: 'app-project-bio',
