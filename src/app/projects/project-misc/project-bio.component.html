@@ -7,7 +7,7 @@
             <div class="card-image-container">
                 <img mat-card-image src={{getImagePath()}} alt={{project?.getFileName()}} class="card-image">
             </div>
-            <mat-card-content class="card-content">
+            <mat-card-content *ngIf="!resize.XS" class="card-content">
                 <a>{{project?.getSummary()}}</a>
             </mat-card-content>
         </button>    

@@ -5,8 +5,8 @@ import { NgFor, NgIf, CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list'
 
 import { ProjectService } from './project-misc/project.service';
-import { ProjectBioComponent } from './project-misc/project-bio.component';
 import { ResizeHandlerService } from '../global-services/resize-handler.service';
+import { ProjectBioComponent } from './project-misc/project-bio.component';
 
 @Component({
   selector: 'app-projects',
@@ -30,7 +30,7 @@ export class ProjectsComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.m_GridData = this.resize.generateMappedData(
-        ["2", "10em", "0.5em"],
+        ["2", "15em", "0.4em"],
         ["3", "20em", "0.6em"],
         ["4", "20em", "0.8em"],
         ["5", "20em", "1em"],
