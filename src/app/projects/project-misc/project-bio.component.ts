@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card'
 
 import { ProjectService } from './project.service';
+import { ResizeHandlerService } from '../../global-services/resize-handler.service';
 
 @Component({
   selector: 'app-project-bio',
@@ -17,7 +18,9 @@ export class ProjectBioComponent implements OnInit {
   @Input({ required: true }) projectName!: string;
   private imgPath!: string;
 
-  constructor() {}
+  constructor(
+    private resize: ResizeHandlerService
+  ) {}
   ngOnInit() {
     this.imgPath = "./assets/projects/images/" + this.project?.getFileName() + ".jpg";
   }

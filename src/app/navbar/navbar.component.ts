@@ -33,8 +33,6 @@ export class NavbarComponent {
     private domSanitizer: DomSanitizer
   ) {
     this.createIcons();
-
-    resizeHandlerService.get();
   }
 
   createIcons() {
