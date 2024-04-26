@@ -38,7 +38,7 @@ export class ProjectBioComponent implements OnInit {
       return;
     }
 
-    this.router.navigate(['/projects'], {fragment: name});
+    this.router.navigate(['projects'], {fragment: name});
   }
 
   get project() { return ProjectService.fetchProject(this.projectName); }
